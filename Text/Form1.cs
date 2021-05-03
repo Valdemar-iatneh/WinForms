@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Text
@@ -19,8 +13,8 @@ namespace Text
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedState = comboBox1.SelectedItem.ToString();
-            MessageBox.Show(selectedState);
+            //string selectedState = comboBox1.SelectedItem.ToString();
+            //MessageBox.Show(selectedState);
             switch (comboBox1.Text)
             {
                 case "Line":
@@ -53,26 +47,20 @@ namespace Text
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            //string selectedState = comboBox1.SelectedItem.ToString();
-            //MessageBox.Show(selectedState);
-            switch (comboBox1.Text)
-            {
-                case "Line":
-                    MessageBox.Show("Line");
-                    break;
-                case "Circle":
-                    MessageBox.Show("Circle");
-                    break;
-                case "Recragle":
-                    MessageBox.Show("Recragle");
-                    break;
-                case "Square":
-                    MessageBox.Show("Square");
-                    break;
-                case "Triagle":
-                    MessageBox.Show("Triaglee");
-                    break;
-            }
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            var paper = pictureBox1.CreateGraphics();
+            var pen = new Pen(Color.Blue, 5);
+            paper.DrawEllipse(pen, 100, 100, 50, 50);
+            paper.DrawLine(new Pen(Color.Green, 6), new Point(60, 30), new Point(150, 70));
+        }
+
+        private void comboBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }

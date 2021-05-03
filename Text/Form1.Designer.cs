@@ -39,6 +39,8 @@ namespace Text
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxLength = new System.Windows.Forms.TextBox();
             this.length = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxWidth = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +48,7 @@ namespace Text
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(280, 9);
+            this.label1.Location = new System.Drawing.Point(436, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(245, 54);
             this.label1.TabIndex = 1;
@@ -62,16 +64,17 @@ namespace Text
             "Recragle",
             "Square",
             "Triagle"});
-            this.comboBox1.Location = new System.Drawing.Point(334, 66);
+            this.comboBox1.Location = new System.Drawing.Point(490, 66);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(133, 24);
             this.comboBox1.TabIndex = 8;
             this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.comboBox1_MouseClick);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Monotype Corsiva", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(334, 96);
+            this.button1.Location = new System.Drawing.Point(490, 96);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(133, 44);
             this.button1.TabIndex = 9;
@@ -81,22 +84,23 @@ namespace Text
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.pictureBox1.Location = new System.Drawing.Point(50, 146);
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 146);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(711, 263);
+            this.pictureBox1.Size = new System.Drawing.Size(1114, 301);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // textBoxX
             // 
-            this.textBoxX.Location = new System.Drawing.Point(607, 68);
+            this.textBoxX.Location = new System.Drawing.Point(763, 68);
             this.textBoxX.Name = "textBoxX";
             this.textBoxX.Size = new System.Drawing.Size(28, 22);
             this.textBoxX.TabIndex = 11;
             // 
             // textBoxY
             // 
-            this.textBoxY.Location = new System.Drawing.Point(607, 98);
+            this.textBoxY.Location = new System.Drawing.Point(763, 98);
             this.textBoxY.Name = "textBoxY";
             this.textBoxY.Size = new System.Drawing.Size(28, 22);
             this.textBoxY.TabIndex = 12;
@@ -104,7 +108,7 @@ namespace Text
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(584, 69);
+            this.label2.Location = new System.Drawing.Point(740, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(17, 17);
             this.label2.TabIndex = 13;
@@ -113,7 +117,7 @@ namespace Text
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(584, 101);
+            this.label3.Location = new System.Drawing.Point(740, 101);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(17, 17);
             this.label3.TabIndex = 14;
@@ -121,7 +125,7 @@ namespace Text
             // 
             // textBoxLength
             // 
-            this.textBoxLength.Location = new System.Drawing.Point(148, 68);
+            this.textBoxLength.Location = new System.Drawing.Point(304, 68);
             this.textBoxLength.Name = "textBoxLength";
             this.textBoxLength.Size = new System.Drawing.Size(72, 22);
             this.textBoxLength.TabIndex = 15;
@@ -129,18 +133,36 @@ namespace Text
             // length
             // 
             this.length.AutoSize = true;
-            this.length.Location = new System.Drawing.Point(90, 69);
+            this.length.Location = new System.Drawing.Point(246, 69);
             this.length.Name = "length";
             this.length.Size = new System.Drawing.Size(52, 17);
             this.length.TabIndex = 16;
             this.length.Text = "Length";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(246, 96);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 17);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Width";
+            // 
+            // textBoxWidth
+            // 
+            this.textBoxWidth.Location = new System.Drawing.Point(304, 95);
+            this.textBoxWidth.Name = "textBoxWidth";
+            this.textBoxWidth.Size = new System.Drawing.Size(72, 22);
+            this.textBoxWidth.TabIndex = 17;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1116, 450);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBoxWidth);
             this.Controls.Add(this.length);
             this.Controls.Add(this.textBoxLength);
             this.Controls.Add(this.label3);
@@ -171,6 +193,8 @@ namespace Text
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxLength;
         private System.Windows.Forms.Label length;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBoxWidth;
     }
 }
 
