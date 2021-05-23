@@ -37,8 +37,6 @@ namespace DrawMain
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.Color_btn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Key = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
             this.lineWidth = new System.Windows.Forms.NumericUpDown();
@@ -116,35 +114,15 @@ namespace DrawMain
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Key,
-            this.Value});
-            this.dataGridView1.Location = new System.Drawing.Point(757, 53);
+            this.dataGridView1.Location = new System.Drawing.Point(757, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(303, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(303, 191);
             this.dataGridView1.TabIndex = 20;
             this.dataGridView1.Leave += new System.EventHandler(this.dataGridView1_Leave);
-            // 
-            // Key
-            // 
-            this.Key.HeaderText = "Key";
-            this.Key.MaxInputLength = 3276;
-            this.Key.MinimumWidth = 6;
-            this.Key.Name = "Key";
-            this.Key.Width = 125;
-            // 
-            // Value
-            // 
-            this.Value.HeaderText = "Value";
-            this.Value.MaxInputLength = 3276;
-            this.Value.MinimumWidth = 6;
-            this.Value.Name = "Value";
-            this.Value.Width = 125;
             // 
             // btnSave
             // 
@@ -226,8 +204,6 @@ namespace DrawMain
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button Color_btn;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Key;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Value;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.NumericUpDown lineWidth;

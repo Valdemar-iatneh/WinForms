@@ -23,6 +23,28 @@ namespace DrawMain
 
             shapes = new List<Shape>();
             canvas = pictureBox1.CreateGraphics();
+
+            // Data grid view setup
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToOrderColumns = false;
+            dataGridView1.ColumnHeadersVisible = false;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.Columns.Add("Key", "Key");
+            dataGridView1.Columns.Add("Value", "Value");
+            dataGridView1.Columns[0].ReadOnly = true;
+            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[0].Resizable = DataGridViewTriState.False;
+            dataGridView1.Columns[1].Resizable = DataGridViewTriState.False;
+            //Change cell font
+            foreach (DataGridViewColumn col in dataGridView1.Columns)
+            {
+                col.DefaultCellStyle.Font = comboBox1.Font;
+            }
+
+            // Figures ListBox Setup
+            comboBox1.DataSource = ShapeFab.InitFiguresData();
         }
 
         // Заполнение строк DataGrid данными в зависимости от выбранной фигуры
@@ -71,7 +93,7 @@ namespace DrawMain
             if (fig != null)
             {
                 var pen = new Pen(Color_btn.BackColor, (int)lineWidth.Value);
-                fig.drawer = new WDrawer(pen, canvas);
+                //fig.drawer = new WDrawer(pen, canvas);
                 shapes.Add(fig);
             }
 
@@ -95,14 +117,25 @@ namespace DrawMain
         }
 
         private void btnSave_Click(object sender, EventArgs e)
-        {
-
+        {        
+            if (saveFileDialog1.ShowDialog(this) == DialogResult.OK)
+            {
+                string path = saveFileDialog1.FileName;
+                using (var sw = new StreamWriter(path, false, System.Text.Encoding.Default))
+                {
+                    pictureBox1.Image.Save(saveFileDialog1.FileName, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    foreach (var fig in shapes)
+                        sw.WriteLine(fig);
+                   
+                }
+                Bitmap savedBit = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+                pictureBox1.DrawToBitmap(savedBit, pictureBox1.ClientRectangle);
+                savedBit.Save(@"F:\123.bmp");
+            }
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-
-
             if (openFileDialog1.ShowDialog(this) == DialogResult.OK)
             {
                 string path = openFileDialog1.FileName;
@@ -111,7 +144,7 @@ namespace DrawMain
                     string line;
                     while ((line = sr.ReadLine()) != null)
                     {
-                        canvas = Graphics.FromImage();
+                        //canvas = Graphics.FromImage();
                     }
                 }
             }
