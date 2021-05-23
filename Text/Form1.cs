@@ -93,7 +93,7 @@ namespace DrawMain
             if (fig != null)
             {
                 var pen = new Pen(Color_btn.BackColor, (int)lineWidth.Value);
-                //fig.drawer = new WDrawer(pen, canvas);
+                fig.drawer = new WDrawer(pen, canvas);
                 shapes.Add(fig);
             }
 
