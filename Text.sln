@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Text", "Text\Text.csproj", "{1434B111-A170-4F85-B56C-6D9B6C49780A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Files", "Files\Files.csproj", "{2B042340-EDA5-4988-8B8D-9CA31CA06864}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrawCore", "Files\DrawCore.csproj", "{2B042340-EDA5-4988-8B8D-9CA31CA06864}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
