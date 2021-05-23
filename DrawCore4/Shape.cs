@@ -107,20 +107,23 @@ namespace DrawCore
             y2 = newY2;
             x3 = newX3;
             y3 = newY3;
-            point1 = new Point(x, y);
-            point2 = new Point(x2, y2);
-            point3 = new Point(x3, y3);
-            Point[] curvePoints =
-            {
-                point1,
-                point2,
-                point3
-            };
+            //point1 = new Point(x, y);
+            //point2 = new Point(x2, y2);
+            //point3 = new Point(x3, y3);
+            //Point[] curvePoints =
+            //{
+            //    point1,
+            //    point2,
+            //    point3
+            //};
         }
 
         public override void Draw()
         {
-            drawer.DrawPoligon(curvePoints);
+            //drawer.DrawPoligon(curvePoints);
+            drawer.DrawLine(x, y, x2, y2);
+            drawer.DrawLine(x2, y2, x3, y3);
+            drawer.DrawLine(x3, y3, x, y);
         }
         public override string ToString()
         {
