@@ -9,7 +9,7 @@ using DrawCore;
 
 namespace DrawMain
 {
-    class WDrawer
+    class WDrawer : Drawer
     {
         private Pen pen;
         private Graphics canvas;
@@ -20,22 +20,22 @@ namespace DrawMain
             canvas = newCanvas;
         }
 
-        public void DrawLine(int x1, int y1, int x2, int y2)
+        public override void DrawLine(int x1, int y1, int x2, int y2)
         {
             canvas.DrawLine(pen, x1, y1, x2, y2);
         }
 
-        public void DrawCircle(int x, int y, int r)
+        public override void DrawCircle(int x, int y, int r)
         {
             canvas.DrawEllipse(pen, x, y, r*2, r*2);
         }
 
-        public void DrawRectangle(int x1, int y1, int x2, int y2)
+        public override void DrawRectangle(int x1, int y1, int x2, int y2)
         {
             canvas.DrawRectangle(pen, x1, y1, x2, y2);
         }
 
-        public void DrawTriangle(int x1, int y1, int x2, int y2, int x3, int y3)
+        public override void DrawTriangle(int x1, int y1, int x2, int y2, int x3, int y3)
         {
             canvas.DrawLine(pen, x1, y1, x2, y2);
             canvas.DrawLine(pen, x2, y2, x3, y3);
